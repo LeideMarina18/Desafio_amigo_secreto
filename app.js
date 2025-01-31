@@ -8,6 +8,7 @@ function adicionarAmigo(){ //Função que adiciona os amigos na lista
         amigos.push(nome); //Atualizar array de amigos: insere na lista o nome com o métod push
         limparCampo(); //Limpar o campo de entrada
         console.log(amigos);
+        atualizarListaDeAmigos();
     }else{
         alert('Por favor, insira um nome'); //Alerta de campo vazio
     }
@@ -16,4 +17,16 @@ function adicionarAmigo(){ //Função que adiciona os amigos na lista
 function limparCampo() {
     nome = document.querySelector('input');
     nome.value = '';
+}
+
+function atualizarListaDeAmigos(){
+    let listaAmigos = document.getElementById("listaAmigos"); //Obter o elemento da lista
+    listaAmigos.innerHTML = ""; //limpar a lista existente: antes de adicionar novos elementos
+    for(var i = 0; i < amigos.length; i++){ //Percorrer o array
+        let novoAmigo = document.createElement("li"); //cria um novo item <li> da lista
+        novoAmigo.append(amigos[i]);
+        listaAmigos.appendChild(novoAmigo); //adiciona esse item a lista html
+    }
+}
+function sortearAmigo(){
 }
