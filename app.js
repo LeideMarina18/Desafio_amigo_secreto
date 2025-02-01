@@ -29,4 +29,19 @@ function atualizarListaDeAmigos(){
     }
 }
 function sortearAmigo(){
+    quantidadeAmigos = amigos.length;
+    let sorteio = document.getElementById("resultado"); //Pega a lista sorteio
+    sorteio.innerHTML = ""; //limpa caso tenha alguma informação anterior
+    if(quantidadeAmigos > 0){ //Validar se há amigos disponíveis
+        let indiceSorteado = parseInt(Math.random() * quantidadeAmigos); //Gera o indice aleatorio
+        let amigoSorteado = document.createElement("li"); //cria uma nova linha para o amigo sorteado
+        amigoSorteado.append(amigos[indiceSorteado]);
+        sorteio.appendChild(amigoSorteado);
+    }else{
+        alert("a lista de amigos está vazia");
+    }
+}
+
+function gerarNumeroAleatorio(){
+    return parseInt(Math.random() * 10 + 1);
 }
