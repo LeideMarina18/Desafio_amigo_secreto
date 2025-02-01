@@ -7,7 +7,6 @@ function adicionarAmigo(){ //Função que adiciona os amigos na lista
     if(nome != ''){ //Validar a entrada: Verifica se a entrada não é uma string vazia
         amigos.push(nome); //Atualizar array de amigos: insere na lista o nome com o métod push
         limparCampo(); //Limpar o campo de entrada
-        console.log(amigos);
         atualizarListaDeAmigos();
     }else{
         alert('Por favor, insira um nome'); //Alerta de campo vazio
@@ -38,10 +37,6 @@ function sortearAmigo(){
         amigoSorteado.append(amigos[indiceSorteado]);
         sorteio.appendChild(amigoSorteado);
     }else{
-        alert("a lista de amigos está vazia");
+        alert("A lista de amigos está vazia, por favor insira nomes");
     }
-}
-
-function gerarNumeroAleatorio(){
-    return parseInt(Math.random() * 10 + 1);
 }
